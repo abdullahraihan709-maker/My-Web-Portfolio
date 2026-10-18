@@ -7,7 +7,6 @@
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const PROJECT_NAMES = { fitlog: "Fit Log", bookvibe: "Book Vibe", devstack: "Dev Stack" };
 
   /* ---------- Theme ---------- */
   const themeBtn = $("[data-theme-toggle]");
@@ -54,11 +53,8 @@
 
   /* ---------- Active nav link + page accent ---------- */
   let zoneEl = null;
-  let pickedProject = null;
-
   function applyAccent() {
-    const inSkills = zoneEl && zoneEl.hasAttribute("data-skills");
-    const accent = inSkills && pickedProject ? pickedProject : zoneEl?.dataset.accentZone;
+    const accent = zoneEl?.dataset.accentZone;
     if (accent) root.dataset.accent = accent;
   }
 
@@ -88,58 +84,6 @@
       });
     }, { rootMargin: "-40% 0px -55% 0px" });
     navSections.forEach((s) => navObserver.observe(s));
-  }
-
-  /* ---------- Skills: dots + filter ---------- */
-  const skillsSection = $("[data-skills]");
-  if (skillsSection) {
-    const tiles = $$(".tile", skillsSection);
-    const picks = $$("[data-pick]", skillsSection);
-    const status = $("[data-skills-status]", skillsSection);
-
-    // Draw one dot per project on every tile; filled when the project uses the skill.
-    tiles.forEach((tile) => {
-      const used = (tile.dataset.used || "").split(/\s+/).filter(Boolean);
-      const dots = $(".tile__dots", tile);
-      Object.keys(PROJECT_NAMES).forEach((key) => {
-        const dot = document.createElement("span");
-        dot.className = "dot";
-        dot.dataset.project = key;
-        if (used.includes(key)) dot.dataset.on = "";
-        dots.appendChild(dot);
-      });
-      if (used.length) {
-        const label = document.createElement("span");
-        label.className = "sr";
-        label.textContent = "Used in " + used.map((k) => PROJECT_NAMES[k]).join(", ");
-        tile.appendChild(label);
-      }
-    });
-
-    function paintSkills() {
-      let count = 0;
-      tiles.forEach((tile) => {
-        const used = (tile.dataset.used || "").split(/\s+/);
-        const match = pickedProject && used.includes(pickedProject);
-        tile.toggleAttribute("data-active", !!match);
-        tile.toggleAttribute("data-dim", !!pickedProject && !match);
-        if (match) count += 1;
-      });
-      picks.forEach((btn) => btn.setAttribute("aria-pressed", String(btn.dataset.pick === pickedProject)));
-      status.textContent = pickedProject
-        ? `${PROJECT_NAMES[pickedProject]}: ${count} of ${tiles.length} skills highlighted. Select it again to clear.`
-        : "";
-      applyAccent();
-    }
-
-    picks.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        pickedProject = pickedProject === btn.dataset.pick ? null : btn.dataset.pick;
-        zoneEl = zoneEl || skillsSection;
-        paintSkills();
-      });
-    });
-    paintSkills();
   }
 
   /* ---------- Project screenshots: gentle tilt following the pointer ---------- */

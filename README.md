@@ -30,12 +30,10 @@ The site is the `public/` folder.
 
 | What | Where |
 | --- | --- |
-| Hero, About, Skills, project cards, Contact | `public/index.html` |
+| Hero, About, Tech Stack, project cards, Contact | `public/index.html` |
 | Project detail pages (features, stack, challenges, next steps) | `scripts/generate.mjs`, then run `node scripts/generate.mjs` |
 | Colours, fonts, spacing | `public/assets/styles.css` (tokens at the top) |
-| Behaviour (theme, menu, skills filter, copy buttons, form) | `public/assets/main.js` |
-
-Skill dots on the home page come from the `data-used` attribute on each skill tile in `index.html`.
+| Behaviour (theme, menu, copy buttons, form) | `public/assets/main.js` |
 
 ## Images
 

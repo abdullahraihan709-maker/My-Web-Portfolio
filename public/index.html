@@ -77,7 +77,7 @@
 
       <ul class="nav__links" id="site-menu">
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#tech-stack">Tech stack</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -172,64 +172,42 @@
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="section" id="skills" data-accent-zone="neutral" data-nav-section data-skills>
-      <div class="container">
-        <div class="section__head">
-          <h2>The tools I build with</h2>
-          <p class="section__intro">Skills grouped by the layer they work in. The dots show which of my projects use each one; pick a project to light them up.</p>
+    <!-- Tech stack -->
+    <section class="section tech-stack" id="tech-stack" data-accent-zone="neutral" data-nav-section>
+      <div class="container tech-stack__inner">
+        <div class="tech-stack__head">
+          <p class="eyebrow">Tools of the trade</p>
+          <h2 class="display">Tech stack</h2>
+          <p class="section__intro">The technologies I use to design, build, and ship thoughtful web experiences.</p>
         </div>
 
-        <div class="legend" role="group" aria-label="Filter skills by project">
-          <span class="legend__label">Show what was used in</span>
-          <button class="pick" type="button" data-pick="fitlog" data-project="fitlog" aria-pressed="false">Fit Log</button>
-          <button class="pick" type="button" data-pick="bookvibe" data-project="bookvibe" aria-pressed="false">Book Vibe</button>
-          <button class="pick" type="button" data-pick="devstack" data-project="devstack" aria-pressed="false">Dev Stack</button>
+        <div class="tech-grid" role="group" aria-label="Abdullah Raihan's technology stack">
+          <ul class="tech-grid__row">
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--next" aria-hidden="true">N</span><span>Next.js</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--react" aria-hidden="true">R</span><span>React</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--ts" aria-hidden="true">TS</span><span>TypeScript</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--javascript" aria-hidden="true">JS</span><span>JavaScript</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--html" aria-hidden="true">5</span><span>HTML5</span></li>
+          </ul>
+          <ul class="tech-grid__row">
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--css" aria-hidden="true">3</span><span>CSS</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--tailwind" aria-hidden="true">~</span><span>Tailwind CSS</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--node" aria-hidden="true">JS</span><span>Node.js</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--express" aria-hidden="true">Ex</span><span>Express.js</span></li>
+          </ul>
+          <ul class="tech-grid__row">
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--mongo" aria-hidden="true">M</span><span>MongoDB</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--auth" aria-hidden="true">BA</span><span>Better Auth</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--daisy" aria-hidden="true">D</span><span>DaisyUI</span></li>
+          </ul>
+          <ul class="tech-grid__row">
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--hero" aria-hidden="true">H</span><span>Hero UI</span></li>
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--git" aria-hidden="true">Git</span><span>Git</span></li>
+          </ul>
+          <ul class="tech-grid__row">
+            <li class="tech-card"><span class="tech-card__icon tech-card__icon--github" aria-hidden="true">GH</span><span>GitHub</span></li>
+          </ul>
         </div>
-        <p class="skills__status" data-skills-status role="status" aria-live="polite"></p>
-
-        <ul class="stack">
-          <li class="stack__row">
-            <h3 class="stack__label">Frontend</h3>
-            <ul class="tiles">
-              <li class="tile" data-used="fitlog bookvibe"><span class="tile__name">Next.js</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used="fitlog bookvibe devstack"><span class="tile__name">React</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used="fitlog bookvibe devstack"><span class="tile__name">TypeScript</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used=""><span class="tile__name">JavaScript</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used=""><span class="tile__name">HTML5</span><span class="tile__dots" aria-hidden="true"></span></li>
-            </ul>
-          </li>
-          <li class="stack__row">
-            <h3 class="stack__label">Styling</h3>
-            <ul class="tiles">
-              <li class="tile" data-used="fitlog bookvibe devstack"><span class="tile__name">TailwindCSS</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used=""><span class="tile__name">CSS</span><span class="tile__dots" aria-hidden="true"></span></li>
-            </ul>
-          </li>
-          <li class="stack__row">
-            <h3 class="stack__label">UI libraries</h3>
-            <ul class="tiles">
-              <li class="tile" data-used="fitlog bookvibe devstack"><span class="tile__name">Daisy UI</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used=""><span class="tile__name">Hero UI</span><span class="tile__dots" aria-hidden="true"></span></li>
-            </ul>
-          </li>
-          <li class="stack__row">
-            <h3 class="stack__label">Backend and data</h3>
-            <ul class="tiles">
-              <li class="tile" data-used=""><span class="tile__name">Node.js</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used=""><span class="tile__name">Express.js</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used=""><span class="tile__name">MongoDB</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used=""><span class="tile__name">Better Auth</span><span class="tile__dots" aria-hidden="true"></span></li>
-            </ul>
-          </li>
-          <li class="stack__row">
-            <h3 class="stack__label">Tools</h3>
-            <ul class="tiles">
-              <li class="tile" data-used="fitlog bookvibe devstack"><span class="tile__name">Git</span><span class="tile__dots" aria-hidden="true"></span></li>
-              <li class="tile" data-used="fitlog bookvibe devstack"><span class="tile__name">GitHub</span><span class="tile__dots" aria-hidden="true"></span></li>
-            </ul>
-          </li>
-        </ul>
       </div>
     </section>
 
