@@ -132,7 +132,7 @@ const navHtml = `<header class="nav" data-nav>
       </a>
       <ul class="nav__links" id="site-menu">
         <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#tech-stack">Tech stack</a></li>
         <li><a href="../index.html#projects" aria-current="true">Projects</a></li>
         <li><a href="../index.html#contact">Contact</a></li>
       </ul>
