@@ -20,11 +20,6 @@ The site is the `public/` folder.
 - **Netlify:** import the repo. `netlify.toml` sets the publish directory to `public`.
 - **GitHub Pages / anything else:** upload the contents of `public/`.
 
-## Before you publish
-
-1. **Replace the resume.** `public/Abdullah-Raihan-Resume.pdf` is a basic stopgap built only from the details in the portfolio brief. Overwrite it with your real resume, keeping the same file name.
-2. **Read the "Challenges" text** on each project page (see "Editing content") and rewrite anything that doesn't match your experience. It was drafted from the repos and live sites, not from you.
-3. **Fix the browser tab titles of the live apps.** Fit Log and Book Vibe currently show "Create Next App" as their page title. Set `metadata.title` in each app's `layout.tsx`.
 
 ## Editing content
 
