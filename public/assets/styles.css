@@ -620,6 +620,7 @@ h3 {
   border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
   border-radius: var(--radius-l);
   background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 17%, var(--surface)), var(--surface) 64%);
+  scroll-margin-top: calc(var(--nav-h) + 1.5rem);
 }
 .project:nth-child(even) { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); }
 .project:nth-child(even) .project__shot { order: 2; }
@@ -673,6 +674,47 @@ h3 {
   font-weight: 620;
 }
 .project__actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
+
+/* Stacking cards: each card sticks below the nav while the next one slides over it. */
+@media (min-width: 901px) {
+  .projects {
+    grid-auto-rows: minmax(80vh, auto);
+    align-items: start;
+    gap: 0;
+  }
+
+  .project {
+    --stack-index: 1;
+    --stack-scale: 1;
+    position: sticky;
+    top: calc(var(--nav-h) + 1rem + (var(--stack-index) - 1) * 0.75rem);
+    z-index: var(--stack-index);
+    transform-origin: top center;
+  }
+
+  .project:nth-child(1) { --stack-index: 1; --stack-scale: 1; }
+  .project:nth-child(2) { --stack-index: 2; --stack-scale: 1.01; }
+  .project:nth-child(3) { --stack-index: 3; --stack-scale: 1.02; }
+  .project:nth-child(4) { --stack-index: 4; --stack-scale: 1.03; }
+
+  /* Progressive enhancement: let the browser count the cards when supported. */
+  @supports (top: calc(sibling-index() * 1px)) {
+    .project { --stack-index: sibling-index(); }
+  }
+
+  @supports (animation-timeline: view()) {
+    .project {
+      animation: project-stack linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 80%;
+    }
+  }
+}
+
+@keyframes project-stack {
+  from { scale: 0.98; }
+  to   { scale: var(--stack-scale, 1); }
+}
 
 @media (max-width: 900px) {
   .project, .project:nth-child(even) { grid-template-columns: 1fr; }
