@@ -114,19 +114,26 @@ When I step away from the keyboard, you can usually find me recharging through s
 
 
 
-\-Display my skills in a visually appealing graphical format. (Next.js, React, Typescript, JavaScript, TailwindCSS, CSS, HTML5, Better Auth, MongoDB, Git, GitHub, Node.js, Express.js, Daisy UI, Hero UI. )
+\-Display my skills in a visually appealing graphical format. (Next.js, React, Typescript, JavaScript, TailwindCSS, CSS, HTML5, Better Auth, MongoDB, NoSQL, Git, GitHub, VS Code, Figma, Node.js, Express.js, RESTful APIs, ShadCN, Daisy UI, Hero UI. )
 
 
 
 \-Categorize skills if necessary (e.g., Frontend, Backend, Tools, Styling, UI Library).
 
+For Example -
 
+Languages: JavaScript (ES6+), TypeScript
+Frontend: Next.js, React.js, HTML5, CSS3, Tailwind CSS
+Backend: Node.js, Express.js, RESTful APIs, MongoDB, NoSQL
+Auth & Security: Better Auth, Firebase Auth, JWT
+UI Libraries: ShadCN, DaisyUI, HeroUI
+Tools: VS Code, Git, GitHub, Figma
 
 &#x20; 
 
 
 
-\### 7. Projects Section (At Least 3 Projects)
+\### 7. Projects Section (At Least 4 Projects)
 
 
 
@@ -138,6 +145,8 @@ Project-2: https://github.com/abdullahraihan709-maker/Book-Vibe  ;
 
 Project-3:  https://github.com/abdullahraihan709-maker/DevStack  ;
 
+Project-4: https://github.com/abdullahraihan709-maker/Bazar-Dor  ;
+
 )
 
 
@@ -146,11 +155,11 @@ Project-3:  https://github.com/abdullahraihan709-maker/DevStack  ;
 
 
 
-\-Project name (Fit Log, Book Vibe, Dev Stack)
+\-Project name (Fit Log, Book Vibe, Dev Stack, Bazar-Dor)
 
 
 
-\-Project image (./public/Project-1-image ; ./public/Project-2-image ; ./public/Project-3-image ;)
+\-Project image (./public/Project-1-image ; ./public/Project-2-image ; ./public/Project-3-image ; ./public/Project-4-image)
 
 
 
@@ -162,7 +171,7 @@ Project-3:  https://github.com/abdullahraihan709-maker/DevStack  ;
 
 
 
-\-Main technology stack used \[ Next.js, Typescript, React 19, TailwindCSS v4 (For Project-1) ; Next.js, Typescript, React 19, TailwindCSS v4 (For Project-2) ; Vite, Typescript, React 19, TailwindCSS v4 (For Project-3) ]
+\-Main technology stack used \[ Next.js, Typescript, React 19, TailwindCSS v4 (For Project-1) ; Next.js, Typescript, React 19, TailwindCSS v4 (For Project-2) ; Vite, Typescript, React 19, TailwindCSS v4 (For Project-3) ; Next.js, Better-Auth, MongoDB, Typescript, React 19, HeroUI, TailwindCSS v4 (For Project-4) ]
 
 
 
@@ -178,6 +187,8 @@ Project-2: https://my-book-vibe-woad.vercel.app/  ;
 
 Project-3: https://assignment-5-dev-stack-blond.vercel.app/  ;
 
+Project-4: https://bazar-dor-two-bay.vercel.app/  ;
+
 )
 
 
@@ -186,11 +197,11 @@ Project-3: https://assignment-5-dev-stack-blond.vercel.app/  ;
 
 
 
-\-Challenges faced while developing the project (Add this part according to my three project.)
+\-Challenges faced while developing the project (Add this part according to my four project.)
 
 
 
-\-Potential improvements and future plans for the project ( For Project-1: Plan to add a proper authentication system, more cards and functionality ; For Project-2: Plan to add a complete authentication system, add more book cards and enhance the overall UI ; For Project-3: Plan to add more content/section and functionality.)
+\-Potential improvements and future plans for the project ( For Project-1: Plan to add a proper authentication system, more cards and functionality ; For Project-2: Plan to add a complete authentication system, add more book cards and enhance the overall UI ; For Project-3: Plan to add more content/section and functionality ; For Project-4: Update the User Profile system, Add a proper Backend server)
 
 
 

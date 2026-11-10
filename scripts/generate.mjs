@@ -102,6 +102,34 @@ const projects = [
     ],
     next: ["Add more content and sections", "Add more functionality"],
   },
+  {
+    slug: "bazardor",
+    file: "bazar-dor.html",
+    name: "Bazar-Dor",
+    tagline: "Fresh essentials, one secure storefront.",
+    image: { n: 4, w: 1903, h: 953, alt: "Screenshot of the Bazar-Dor home page: a green grocery storefront with a Bangla headline, a basket of fruit illustration, and price cards for onions, ginger and brinjal." },
+    host: "bazar-dor-two-bay.vercel.app",
+    live: "https://bazar-dor-two-bay.vercel.app/",
+    repo: "https://github.com/abdullahraihan709-maker/Bazar-Dor",
+    summary: "Full-stack authenticated e-commerce application featuring secure middleware routing, dynamic product catalogs, and a robust MongoDB data layer.",
+    overview: [
+      "Bazar-Dor is a full-stack grocery marketplace for everyday essentials. Shoppers browse a dynamic product catalog backed by MongoDB, while sign-in and protected routes are handled by Better Auth and Next.js middleware.",
+    ],
+    features: [
+      ["Authenticated shopping", "Sign-up, sign-in and session handling are powered by Better Auth, with account and checkout routes kept behind middleware."],
+      ["Secure middleware routing", "Next.js middleware checks the session before protected pages load, redirecting signed-out visitors instead of exposing private views."],
+      ["MongoDB data layer", "A structured data model stores users information behind server-side queries."],
+      ["Responsive storefront", "A mobile-first Tailwind CSS layout with reusable HeroUI components keeps the catalog comfortable to browse on any screen."],
+    ],
+    stack: ["Next.js", "TypeScript", "React 19", "Tailwind CSS v4"],
+    also: ["Better Auth", "MongoDB", "HeroUI", "Node.js"],
+    challenges: [
+      ["Auth that holds across routes", "Keeping sessions consistent between server-rendered pages and client components meant wiring Better Auth into middleware and making sure protected routes redirect cleanly."],
+      ["Balancing server and client", "The App Router lets product pages render on the server, while cart and account interactions need the browser. Splitting those responsibilities without duplicating state took planning."],
+      ["One UI across devices", "The storefront has to feel equally usable on a phone and a desktop, so navigation, product grids and forms are built mobile-first with Tailwind."],
+    ],
+    next: ["Update the user profile system", "Add a proper backend server"],
+  },
 ];
 
 /* ------------------------------------------------------------------ */

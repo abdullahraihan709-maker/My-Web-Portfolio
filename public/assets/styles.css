@@ -38,6 +38,7 @@
   --c-fitlog: #c8f53b;   --c-fitlog-on: #0f1306;   --c-fitlog-ink: #c8f53b;
   --c-bookvibe: #2fd23a; --c-bookvibe-on: #04160a; --c-bookvibe-ink: #58e464;
   --c-devstack: #ff5c93; --c-devstack-on: #1c0610; --c-devstack-ink: #ff7aa6;
+  --c-bazardor: #41d98a; --c-bazardor-on: #03140a; --c-bazardor-ink: #63e6a2;
 }
 
 :root[data-theme="light"] {
@@ -56,6 +57,7 @@
   --c-fitlog: #c8f53b;   --c-fitlog-on: #0f1306;   --c-fitlog-ink: #4f6b00;
   --c-bookvibe: #22b82b; --c-bookvibe-on: #04160a; --c-bookvibe-ink: #137a1b;
   --c-devstack: #d6246e; --c-devstack-on: #ffffff; --c-devstack-ink: #c01a5f;
+  --c-bazardor: #0b7a45; --c-bazardor-on: #ffffff; --c-bazardor-ink: #0a6b3d;
 }
 
 /* The live accent. JS changes data-accent on <html> as sections scroll into view. */
@@ -68,11 +70,13 @@
 :root[data-accent="fitlog"]   { --accent: var(--c-fitlog);   --on-accent: var(--c-fitlog-on);   --accent-ink: var(--c-fitlog-ink); }
 :root[data-accent="bookvibe"] { --accent: var(--c-bookvibe); --on-accent: var(--c-bookvibe-on); --accent-ink: var(--c-bookvibe-ink); }
 :root[data-accent="devstack"] { --accent: var(--c-devstack); --on-accent: var(--c-devstack-on); --accent-ink: var(--c-devstack-ink); }
+:root[data-accent="bazardor"] { --accent: var(--c-bazardor); --on-accent: var(--c-bazardor-on); --accent-ink: var(--c-bazardor-ink); }
 
 /* Anything tagged with a project keeps that project's colours locally. */
 [data-project="fitlog"]   { --accent: var(--c-fitlog);   --on-accent: var(--c-fitlog-on);   --accent-ink: var(--c-fitlog-ink); }
 [data-project="bookvibe"] { --accent: var(--c-bookvibe); --on-accent: var(--c-bookvibe-on); --accent-ink: var(--c-bookvibe-ink); }
 [data-project="devstack"] { --accent: var(--c-devstack); --on-accent: var(--c-devstack-on); --accent-ink: var(--c-devstack-ink); }
+[data-project="bazardor"] { --accent: var(--c-bazardor); --on-accent: var(--c-bazardor-on); --accent-ink: var(--c-bazardor-ink); }
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -406,7 +410,7 @@ h3 {
 .social a:hover { border-color: var(--accent-ink); transform: translateY(-1px); }
 .social .icon { width: 1.1rem; height: 1.1rem; }
 
-/* Portrait with the three projects tucked behind it */
+/* Portrait with the four projects tucked behind it */
 .hero__visual {
   container-type: inline-size;
   position: relative;
@@ -447,6 +451,7 @@ h3 {
 .peek--1 { top: 1cqw;  --tilt: 6deg;  animation-delay: 0.25s; }
 .peek--2 { top: 29cqw; --tilt: -3deg; animation-delay: 0.4s; }
 .peek--3 { top: 57cqw; --tilt: 5deg;  animation-delay: 0.55s; }
+.peek--4 { top: 85cqw; --tilt: -2deg; animation-delay: 0.7s; }
 .peek:hover, .peek:focus-visible { translate: 2.5cqw -1cqw; scale: 1.04; z-index: 4; }
 
 @keyframes peek-out {

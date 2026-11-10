@@ -32,7 +32,7 @@ The site is the `public/` folder.
 
 ## Images
 
-`public/My-Profile-photo.jpg`, `public/Project-1-image.png`, `Project-2-image.png`, `Project-3-image.png` are your supplied files. The `.webp` copies are smaller versions the pages load first; if you replace a PNG, regenerate its WebP too.
+`public/My-Profile-photo.jpg`, `public/Project-1-image.png`, `Project-2-image.png`, `Project-3-image.png` and `Project-4-image.png` are your supplied files. The `.webp` copies are smaller versions the pages load first; if you replace a PNG, regenerate its WebP too.
 
 ## Notes
 
