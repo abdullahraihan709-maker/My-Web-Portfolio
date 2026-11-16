@@ -535,77 +535,188 @@ h3 {
   text-transform: uppercase;
 }
 .tech-stack__head .section__intro { margin-inline: auto; }
-.tech-grid {
-  width: min(100%, 57rem);
-  display: grid;
-  gap: 0.65rem;
-  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
-  padding: 0;
-}
-.tech-grid__row {
-  display: flex;
-  justify-content: center;
-  gap: 0.65rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.tech-card {
-  flex: 0 0 6.25rem;
-  width: 6.25rem;
-  min-height: 6.25rem;
+/* Orbital tech sphere */
+.tech-orbit {
+  width: 100%;
   display: grid;
   justify-items: center;
-  align-content: center;
-  gap: 0.55rem;
-  padding: 0.75rem 0.35rem;
-  border: 1px solid color-mix(in srgb, var(--ambient-purple) 24%, var(--line));
-  border-radius: 15px;
-  background: color-mix(in srgb, var(--surface) 58%, transparent);
-  color: var(--muted);
-  font-size: 0.79rem;
-  font-weight: 650;
-  text-align: center;
-  transition: transform 0.22s ease, border-color 0.22s ease, background-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  margin-top: clamp(2rem, 5vw, 3.5rem);
 }
-.tech-card:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--ambient-purple) 65%, var(--line));
-  background: color-mix(in srgb, var(--ambient-purple) 14%, var(--surface));
-  color: var(--text);
-  box-shadow: 0 10px 28px color-mix(in srgb, var(--ambient-purple) 14%, transparent);
+.tech-orbit__stage {
+  position: relative;
+  width: min(84vw, 24.5rem);
+  aspect-ratio: 1;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
-.tech-card__icon {
-  width: 2.25rem;
-  height: 2.25rem;
+.tech-orbit__stage:active { cursor: grabbing; }
+
+.tech-orbit__aura {
+  position: absolute;
+  inset: 7%;
+  transform: scale(1.14);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(19px);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--ambient-purple) 17%, transparent),
+    color-mix(in srgb, var(--ambient-purple) 8%, transparent) 54%,
+    transparent 73%
+  );
+}
+
+.tech-orbit__glass {
+  position: absolute;
+  inset: 1.1%;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--ambient-purple) 17%, transparent);
+  background:
+    radial-gradient(
+      circle at 48% 44%,
+      color-mix(in srgb, var(--ambient-purple) 13%, transparent),
+      color-mix(in srgb, var(--ambient-purple) 8%, var(--surface)) 57%,
+      color-mix(in srgb, var(--surface) 18%, transparent) 75%
+    ),
+    radial-gradient(
+      circle at 30% 28%,
+      color-mix(in srgb, var(--text) 8%, transparent),
+      transparent 52%
+    );
+  box-shadow:
+    inset 0 0 36px color-mix(in srgb, var(--ambient-purple) 7%, transparent),
+    0 0 38px color-mix(in srgb, var(--ambient-purple) 11%, transparent);
+  pointer-events: none;
+}
+
+.tech-orbit__mesh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  color: color-mix(in srgb, var(--ambient-purple) 82%, var(--text));
+  pointer-events: none;
+}
+.tech-orbit__mesh path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.tech-orbit__skills {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.tech-orbit__skill {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  min-width: 2.6rem;
+  padding: 0.1rem 0.25rem 0.3rem;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: var(--skill-color, var(--text));
+  font-family: var(--font-display);
+  cursor: pointer;
+  transform-origin: center;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: filter 0.16s ease;
+}
+:root[data-theme="light"] .tech-orbit__skill {
+  color: var(--skill-color-light, var(--skill-color, var(--text)));
+}
+.tech-orbit__skill:hover,
+.tech-orbit__skill:focus-visible,
+.tech-orbit__skill[aria-pressed="true"] {
+  filter: drop-shadow(0 0 11px color-mix(in srgb, currentColor 48%, transparent));
+}
+.tech-orbit__skill:focus-visible {
+  outline-offset: 5px;
+}
+
+.tech-orbit__icon {
+  width: 1.95rem;
+  height: 1.95rem;
   display: grid;
   place-items: center;
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--text) 10%, transparent);
-  color: var(--text);
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: -0.06em;
+  filter: drop-shadow(0 2px 6px rgb(0 0 0 / 0.24));
 }
-.tech-card__icon--next, .tech-card__icon--express, .tech-card__icon--github { background: var(--text); color: var(--bg); }
-.tech-card__icon--react { background: transparent; color: #70d8ff; font-size: 2rem; }
-.tech-card__icon--ts { background: #3178c6; color: #fff; font-size: 0.92rem; }
-.tech-card__icon--javascript { background: #e8cf52; color: #28230d; }
-.tech-card__icon--html { color: #f0784d; }
-.tech-card__icon--css { color: #6aa7ff; }
-.tech-card__icon--tailwind { color: #67d6df; font-size: 1.8rem; }
-.tech-card__icon--node, .tech-card__icon--mongo { color: #74c884; }
-.tech-card__icon--auth, .tech-card__icon--hero { color: #d4aaff; }
-.tech-card__icon--daisy { color: #ff87cf; }
-.tech-card__icon--git { color: #f17a54; font-size: 1.6rem; }
+.tech-orbit__icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+:root[data-theme="light"] .tech-orbit__icon {
+  filter: drop-shadow(0 1px 2px rgb(23 27 38 / 0.16));
+}
+.tech-orbit__icon--text {
+  border: 1px solid color-mix(in srgb, currentColor 42%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  filter: none;
+}
 
-@media (max-width: 560px) {
-  .tech-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
-  .tech-grid__row { display: contents; }
-  .tech-card { flex: none; width: auto; }
-  .tech-card { min-height: 5.8rem; font-size: 0.73rem; }
+.tech-orbit__label {
+  max-width: 5.2rem;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 0.4rem;
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--text) 76%, var(--muted));
+  text-shadow: 0 1px 5px color-mix(in srgb, var(--bg) 82%, transparent);
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 0.16s ease, transform 0.16s ease, color 0.16s ease;
+  pointer-events: none;
+}
+.tech-orbit__skill[data-label-visible] .tech-orbit__label {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tech-orbit__skill[aria-pressed="true"] .tech-orbit__label { color: var(--text); }
+
+.tech-orbit__hint {
+  margin: 0.6rem 0 0;
+  font-size: 0.5rem;
+  font-weight: 650;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--muted) 55%, transparent);
+  transition: color 0.2s ease;
+}
+.tech-orbit:hover .tech-orbit__hint,
+.tech-orbit:focus-within .tech-orbit__hint {
+  color: var(--muted);
+}
+
+@media (min-width: 640px) {
+  .tech-orbit__stage { width: min(76vw, 28.75rem); }
+  .tech-orbit__icon { width: 2.25rem; height: 2.25rem; }
+  .tech-orbit__label { font-size: 0.44rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-orbit__skill,
+  .tech-orbit__label,
+  .tech-orbit__hint { transition-duration: 0.01ms; }
 }
 
 /* ---------- Projects ---------- */

@@ -184,32 +184,33 @@
           <p class="section__intro">The technologies I use to design, build, and ship thoughtful web experiences.</p>
         </div>
 
-        <div class="tech-grid" role="group" aria-label="Abdullah Raihan's technology stack">
-          <ul class="tech-grid__row">
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--next" aria-hidden="true">N</span><span>Next.js</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--react" aria-hidden="true">R</span><span>React</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--ts" aria-hidden="true">TS</span><span>TypeScript</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--javascript" aria-hidden="true">JS</span><span>JavaScript</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--html" aria-hidden="true">5</span><span>HTML5</span></li>
-          </ul>
-          <ul class="tech-grid__row">
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--css" aria-hidden="true">3</span><span>CSS</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--tailwind" aria-hidden="true">~</span><span>Tailwind CSS</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--node" aria-hidden="true">JS</span><span>Node.js</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--express" aria-hidden="true">Ex</span><span>Express.js</span></li>
-          </ul>
-          <ul class="tech-grid__row">
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--mongo" aria-hidden="true">M</span><span>MongoDB</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--auth" aria-hidden="true">BA</span><span>Better Auth</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--daisy" aria-hidden="true">D</span><span>DaisyUI</span></li>
-          </ul>
-          <ul class="tech-grid__row">
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--hero" aria-hidden="true">H</span><span>Hero UI</span></li>
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--git" aria-hidden="true">Git</span><span>Git</span></li>
-          </ul>
-          <ul class="tech-grid__row">
-            <li class="tech-card"><span class="tech-card__icon tech-card__icon--github" aria-hidden="true">GH</span><span>GitHub</span></li>
-          </ul>
+        <div class="tech-orbit" data-tech-orbit>
+          <div
+            class="tech-orbit__stage"
+            role="group"
+            aria-label="Rotating 3D technology skill sphere. Drag to rotate, or select a skill."
+            data-orbit-stage
+          >
+            <div class="tech-orbit__aura" aria-hidden="true"></div>
+            <div class="tech-orbit__glass" aria-hidden="true"></div>
+
+            <svg class="tech-orbit__mesh" viewBox="-230 -230 460 460" aria-hidden="true" data-orbit-mesh>
+              <defs>
+                <radialGradient id="tech-orbit-glow">
+                  <stop offset="0%" stop-color="currentColor" stop-opacity="0.11" />
+                  <stop offset="75%" stop-color="currentColor" stop-opacity="0.05" />
+                  <stop offset="100%" stop-color="currentColor" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <circle cx="0" cy="0" r="207" fill="url(#tech-orbit-glow)"></circle>
+              <g data-orbit-paths></g>
+              <g data-orbit-nodes></g>
+            </svg>
+
+            <div class="tech-orbit__skills" data-orbit-skills></div>
+          </div>
+
+          <p class="tech-orbit__hint" aria-hidden="true">Drag to explore</p>
         </div>
       </div>
     </section>
@@ -400,5 +401,6 @@
   </button>
 
   <script src="assets/main.js" defer></script>
+  <script src="assets/tech-orbit.js" defer></script>
 </body>
 </html>
